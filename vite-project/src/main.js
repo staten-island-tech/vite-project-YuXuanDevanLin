@@ -3,6 +3,10 @@ import javascriptLogo from './javascript.svg'
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.js'
 
+const artPieces = [
+  { title: 'Starry Night', artist: 'Vincent van Gogh', year: 1889 },
+]
+
 document.querySelector('#app').innerHTML = `
   <div>
     <a href="https://vite.dev" target="_blank">
