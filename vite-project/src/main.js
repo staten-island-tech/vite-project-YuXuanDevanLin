@@ -68,25 +68,25 @@ const artPieces = [
     src: "https://scontent-lga3-1.cdninstagram.com/v/t51.29350-15/469054371_943748877085911_7389252434414825319_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjE0MzF4MTc4OS5zZHIuZjI5MzUwLmRlZmF1bHRfaW1hZ2UuYzIifQ&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_cat=103&_nc_oc=Q6cZ2QHT3ZOuuuBo41OlTqWzOapZN8IzVRGBs2frbtP6GBv1kEb1rZWafbwi5wOUoCG7LoI&_nc_ohc=V0aIqtGL-AYQ7kNvwF8CrCM&_nc_gid=z0H8c9EGLpmp6unNYc4gRw&edm=APoiHPcBAAAA&ccb=7-5&ig_cache_key=MzUxNDIyODAzMTcxNjgwMjE0NQ%3D%3D.3-ccb7-5&oh=00_AfgD9oA-LiykzIZC3a5PIJFz7g5df3C4PbQb2Ke3VlfOlg&oe=692D0026&_nc_sid=22de04"
   },
   { title: "",
-    category: "Collab 1 (name tbd)", 
+    category: "Collab 2 (name tbd)", 
     year: 2024,
-    month: "October",
-    day: 20,
-    src: "https://scontent-lga3-3.cdninstagram.com/v/t51.29350-15/463651627_1801148500289530_3042779038848272049_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjE0NDB4MTU3OS5zZHIuZjI5MzUwLmRlZmF1bHRfaW1hZ2UuYzIifQ&_nc_ht=scontent-lga3-3.cdninstagram.com&_nc_cat=110&_nc_oc=Q6cZ2QFVQy4JugmROa7uLvhRq_zRUXWUsJbYM__K5IQOJyck4N_WuVs6yeMdhYIr_zPJWELxjBTUysEMWbWPsPFmZybz&_nc_ohc=oyMZhrzl1SAQ7kNvwEWWLoy&_nc_gid=62oxODFaUrF3124ZXHz52A&edm=APoiHPcBAAAA&ccb=7-5&ig_cache_key=MzQ4Mzc0NTczNDg4NTczODQyNg%3D%3D.3-ccb7-5&oh=00_AfiaZeFnmn3CVeWNMQ86jNSAaisXkdJ8zV9h2N9LWca4pw&oe=692AF120&_nc_sid=22de04"
+    month: "December",
+    day: 4,
+    src: "https://scontent-lga3-2.cdninstagram.com/v/t51.29350-15/469277765_600363539080365_5148568048319780869_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjE0NDB4MTcyOC5zZHIuZjI5MzUwLmRlZmF1bHRfaW1hZ2UuYzIifQ&_nc_ht=scontent-lga3-2.cdninstagram.com&_nc_cat=109&_nc_oc=Q6cZ2QFN4YVvWfZG7xBEqnhiydLvqbR2INLKm0Wq9sILHfs91o_bR5tb4wBIDzG695AdfAI&_nc_ohc=AWLCQGF34MIQ7kNvwHhtlsg&_nc_gid=TmLbu4NRR8blcwQHZPrtdA&edm=APoiHPcBAAAA&ccb=7-5&ig_cache_key=MzUxNTY2ODU4NDUwMTg1MzYyOA%3D%3D.3-ccb7-5&oh=00_AfiS1z_vJ2Upl6qRtLBCanoaLm6o8FcYFeI5GxsVlumCJw&oe=692D0F74&_nc_sid=22de04"
   },
   { title: "",
     category: "Collab 2 (name tbd)", 
     year: 2024,
-    month: "November",
-    day: 28,
-    src: "https://scontent-lga3-3.cdninstagram.com/v/t51.29350-15/468569243_566788342627914_3613043542215816904_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjE0NDB4MTc3MS5zZHIuZjI5MzUwLmRlZmF1bHRfaW1hZ2UuYzIifQ&_nc_ht=scontent-lga3-3.cdninstagram.com&_nc_cat=106&_nc_oc=Q6cZ2QFVQy4JugmROa7uLvhRq_zRUXWUsJbYM__K5IQOJyck4N_WuVs6yeMdhYIr_zPJWELxjBTUysEMWbWPsPFmZybz&_nc_ohc=oyeD6vJ8CskQ7kNvwF8dUfs&_nc_gid=62oxODFaUrF3124ZXHz52A&edm=APoiHPcBAAAA&ccb=7-5&ig_cache_key=MzUxMTUxNjk3MDc4OTIyNjY4Nw%3D%3D.3-ccb7-5&oh=00_Afjql8Q1jlDz44YulkUW2ITkWK64gL1kw6mohiKQeNPoHQ&oe=692AE8B5&_nc_sid=22de04"
+    month: "December",
+    day: 5,
+    src: "https://scontent-lga3-2.cdninstagram.com/v/t51.29350-15/469255449_542700638568192_1287282974160348228_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjE0NDB4MTcyOC5zZHIuZjI5MzUwLmRlZmF1bHRfaW1hZ2UuYzIifQ&_nc_ht=scontent-lga3-2.cdninstagram.com&_nc_cat=100&_nc_oc=Q6cZ2QFN4YVvWfZG7xBEqnhiydLvqbR2INLKm0Wq9sILHfs91o_bR5tb4wBIDzG695AdfAI&_nc_ohc=yKm_SB70DH8Q7kNvwGwpz7a&_nc_gid=TmLbu4NRR8blcwQHZPrtdA&edm=APoiHPcBAAAA&ccb=7-5&ig_cache_key=MzUxNjY3NDczMjgzNDQ1MzQ5NA%3D%3D.3-ccb7-5&oh=00_Afj33gOxOqm76hEoUkjHu4JbVcAIj7qnmAsCNTAVBwWs6A&oe=692D15FC&_nc_sid=22de04"
   },
   { title: "",
     category: "Collab 3 (name tbd)", 
-    year: 2025,
-    month: "February",
-    day: 2,
-    src: "https://scontent-lga3-3.cdninstagram.com/v/t51.75761-15/476137696_17864267460328472_1613198709888328208_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ig_cache_key=MzU1OTIyMDY5NTY4NzA0NzU0MQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5zZHIuQzMifQ%3D%3D&_nc_ohc=8YuAaC7wp5gQ7kNvwFEAoAq&_nc_oc=AdmbmJD784LWUZMWaaF7wyTr3tRqnwyrDHk81ffzdBNSAukp9_S2Pj96zRg_fXUhP8-MXaSTFyIaA0UmHIziCldV&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-3.cdninstagram.com&_nc_gid=PGP9dD83zWOV4wLuS8_bnA&oh=00_AfiradEXB6SM4aBnAkczvKlWFY0f9z06G03JJ4fFORY75w&oe=692AE245"
+    year: 2024,
+    month: "December",
+    day: 8,
+    src: "https://scontent-lga3-3.cdninstagram.com/v/t51.75761-15/469258045_17856313194328472_1721973465559187148_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ig_cache_key=MzUxODk3NTY5NzI1NjM3OTM2Ng%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTc2Mi5zZHIuQzMifQ%3D%3D&_nc_ohc=0E1AyMFLtkMQ7kNvwFG5UIs&_nc_oc=AdnKqn3J9woHKUNS7jmTV2kmAaupgpdzuhJR2FUgMme6H0N_6BXk8Qo_8UeZeGmu66k&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-3.cdninstagram.com&_nc_gid=TmLbu4NRR8blcwQHZPrtdA&oh=00_AfgUsOLz0GcNDis_-bVSaRt2yCr9glUDJQ0ornd1H5qDHA&oe=692CFAB5"
   },
 ]
 
