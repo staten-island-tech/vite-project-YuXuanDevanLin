@@ -136,7 +136,7 @@ const artPieces = [
     src: "https://scontent-lga3-2.cdninstagram.com/v/t51.75761-15/475551556_17863616232328472_1443843372512169205_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ig_cache_key=MzU1NTQ5NjQ2MzMyNjQ0NDQzMA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5zZHIuQzMifQ%3D%3D&_nc_ohc=aj2f3lsFR9IQ7kNvwFOcnXy&_nc_oc=AdmrrnYvmgmYY1BTlpku7LvI4qwvVFIS-E5aT61in_kZWKJ30W6I96m-NtP5qC98ZDs&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-2.cdninstagram.com&_nc_gid=oiDXNawv1IVruCij9YbFpQ&oh=00_AfkKWGy-zj55b_FNbzg5FbQga3bVvzEuFfFa-Rs6UZxLOw&oe=69350894"
   },
   { title: "",
-    category: "", 
+    category: "Collab 3 (name tbd)", 
     year: 2025,
     artist: "_.gaiahad",
     month: "January",
