@@ -1,7 +1,4 @@
 import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
 
 const artPieces = [
   { title: "",
@@ -418,7 +415,6 @@ const artPieces = [
     day: 10,
     src: "https://scontent-lga3-3.cdninstagram.com/v/t51.82787-15/575968010_17899571445328472_5625615237592748352_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ig_cache_key=Mzc2MzI2NzUzOTg5MjQzOTk1Ng%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTc5OC5zZHIuQzIifQ%3D%3D&_nc_ohc=T2PvXXGfmc8Q7kNvwH8244u&_nc_oc=AdmWAFHcm4r7mwN_v4YoRPVkXpsCVFI4taZCM0ntvggrfTP9ug6wC3annFmynycnCvs&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-3.cdninstagram.com&_nc_gid=qCrbpB5xH7cWU4aXObO68A&oh=00_AfmPzIWjjnRuFPF5vlB-jJLsa1JTKSO_hwUxOTwc18LdPA&oe=6937A3B8"
   },
-  
 ]
 
 
