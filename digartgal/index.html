@@ -2,36 +2,73 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>vite-project</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Digital Art Club Gallery</title>
   </head>
-  <body>
+
+  <body class="warm">
     <div id="app"></div>
 
-    <div class="title"> 
-      <h1 id="title">Digital Art Club</h1>
-      <p id="">Art Gallery</p>
-      <button id="themeToggle">Toggle Theme</button>
+    <div class="artofDay_text">
+      <h4>Art of the Day</h4>
+    </div>
+
+    <div class="artofDay__container">
+      <img id="artofDayImg" />
+    </div>
+
+    <button class="theme__toggle">Toggle Theme</button>
+
+    <div class="title">
+      <h1>Digital Art Club</h1>
     </div>
 
     <div class="filters">
-      <h1 id="Generic">Categories:</h1>
-      <button class="filter-btn">All</button>
-      <button class="filter-btn">Individual</button>
-      <h1 id="Collab">Collaborations:</h1>
-      <button class="filter-btn">Collab 1</button>
-      <button class="filter-btn">Collab 2</button>
-      <button class="filter-btn">Collab 3</button>
-      <button class="filter-btn">Collab 4</button>
-      <button class="filter-btn">Collab 5</button>
-      <button class="filter-btn">Collab 6</button>  
-      <button class="filter-btn">Collab 7</button>
-      <button class="filter-btn">Collab 8</button>
-      <button class="filter-btn">Collab 9</button>
+      <button class="filter__buttons">All</button>
+      <button class="filter__buttons">individual piece</button>
+      <button class="filter__buttons">Collab 1</button>
+      <button class="filter__buttons">Collab 2</button>
+      <button class="filter__buttons">Collab 3</button>
+      <button class="filter__buttons">Collab 4</button>
+      <button class="filter__buttons">Collab 5</button>
+      <button class="filter__buttons">Collab 6</button>
+      <button class="filter__buttons">Collab 7</button>
+      <button class="filter__buttons">Collab 8</button>
+      <button class="filter__buttons">Collab 9</button>
     </div>
 
-    <script type="module" src="main.js"></script>
+    <h5>Collection</h5>
+
+    <div class="container"></div>
+
+    <div class="upload__section">
+      <h2>Upload Image</h2>
+      <form id="uploadForm">
+        <input type="file" required />
+        <input id="uploadName" type="text" placeholder="Name" required />
+        <input id="uploadArtist" type="text" placeholder="Artist" required />
+        <input id="uploadYear" type="text" placeholder="Year" required />
+        <button type="submit">Upload</button>
+      </form>
+    </div>
+
+    <div id="modal" class="modal">
+      <div class="modal__content">
+        <img id="modalImg" />
+        <h2 id="modalName"></h2>
+        <h3 id="modalArtist"></h3>
+        <p id="modalYear"></p>
+      </div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
   </body>
 </html>

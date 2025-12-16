@@ -1,40 +1,32 @@
 import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
 
 const artPieces = [
   { title: "",
-    category: "individual piece", 
-    year: 2024,
-    artist: "unknown artist",
-    month: "November",
-    day: 28,
-    src: "https://scontent-lga3-1.cdninstagram.com/v/t51.29350-15/468819304_465430959495231_1529626118058210351_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjEwODF4MTM1Mi5zZHIuZjI5MzUwLmRlZmF1bHRfaW1hZ2UuYzIifQ&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_cat=103&_nc_oc=Q6cZ2QFVQy4JugmROa7uLvhRq_zRUXWUsJbYM__K5IQOJyck4N_WuVs6yeMdhYIr_zPJWELxjBTUysEMWbWPsPFmZybz&_nc_ohc=l9OBZg7d2tkQ7kNvwE4rl3B&_nc_gid=62oxODFaUrF3124ZXHz52A&edm=APoiHPcBAAAA&ccb=7-5&ig_cache_key=MzUxMTUxNTYxMzY5NjkyMjI5OA%3D%3D.3-ccb7-5&oh=00_AfhuPtX-J4wgXQwgMP1lZQt3H4DZaYo7jzan7mD-LrRdHw&oe=692AF183&_nc_sid=22de04"
-  },
-  { title: "",
-    category: "Collab 1 (name tbd)", 
+    category: "Collab 1", 
     year: 2024,
     artist: "rzskylark",
     month: "October",
     day: 21,
-    src: "https://scontent-lga3-3.cdninstagram.com/v/t51.29350-15/463730256_8830583776971856_9046570775838030408_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjg4NXg5NDYuc2RyLmYyOTM1MC5kZWZhdWx0X2ltYWdlLmMyIn0&_nc_ht=scontent-lga3-3.cdninstagram.com&_nc_cat=104&_nc_oc=Q6cZ2QFVQy4JugmROa7uLvhRq_zRUXWUsJbYM__K5IQOJyck4N_WuVs6yeMdhYIr_zPJWELxjBTUysEMWbWPsPFmZybz&_nc_ohc=rq5nDQZ1TcMQ7kNvwGr4vjF&_nc_gid=62oxODFaUrF3124ZXHz52A&edm=APoiHPcBAAAA&ccb=7-5&ig_cache_key=MzQ4MzkxMTMwMzQwODgxNzEzNQ%3D%3D.3-ccb7-5&oh=00_Afj9IZmRxRIvB33u9X5RO1bqb7ihyj2r4gq6niDF-fjnww&oe=692AF723&_nc_sid=22de04"
+    src: "",
+    alt: "Artwork by rzskylark from Collab 1, October 21, 2024"
   },
   { title: "",
-    category: "Collab 1 (name tbd)", 
+    category: "Collab 1", 
     year: 2024,
     artist: "turkishwarrior420",
     month: "October",
     day: 20,
-    src: "https://scontent-lga3-2.cdninstagram.com/v/t51.29350-15/464167515_541718595465121_1016828436024591641_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjE0NDB4MTQ0MC5zZHIuZjI5MzUwLmRlZmF1bHRfaW1hZ2UuYzIifQ&_nc_ht=scontent-lga3-2.cdninstagram.com&_nc_cat=101&_nc_oc=Q6cZ2QFVQy4JugmROa7uLvhRq_zRUXWUsJbYM__K5IQOJyck4N_WuVs6yeMdhYIr_zPJWELxjBTUysEMWbWPsPFmZybz&_nc_ohc=bDOxeyvuEbsQ7kNvwEeZ9IA&_nc_gid=62oxODFaUrF3124ZXHz52A&edm=APoiHPcBAAAA&ccb=7-5&ig_cache_key=MzQ4MzI5MzE0NjU1ODAzNjIyNQ%3D%3D.3-ccb7-5&oh=00_AfiYd1pEml-EIqUdeUe8WwuKycYrDZnn2nMzGM-8u74Saw&oe=692AEE09&_nc_sid=22de04"
+    src: "",
+    alt: "Artwork by turkishwarrior420 from Collab 1, October 20, 2024"
   },
   { title: "",
-    category: "Collab 1 (name tbd)", 
+    category: "Collab 1", 
     year: 2024,
     artist: "dokuzuu",
     month: "October",
     day: 20,
-    src: "https://scontent-lga3-3.cdninstagram.com/v/t51.29350-15/463651627_1801148500289530_3042779038848272049_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjE0NDB4MTU3OS5zZHIuZjI5MzUwLmRlZmF1bHRfaW1hZ2UuYzIifQ&_nc_ht=scontent-lga3-3.cdninstagram.com&_nc_cat=110&_nc_oc=Q6cZ2QFVQy4JugmROa7uLvhRq_zRUXWUsJbYM__K5IQOJyck4N_WuVs6yeMdhYIr_zPJWELxjBTUysEMWbWPsPFmZybz&_nc_ohc=oyMZhrzl1SAQ7kNvwEWWLoy&_nc_gid=62oxODFaUrF3124ZXHz52A&edm=APoiHPcBAAAA&ccb=7-5&ig_cache_key=MzQ4Mzc0NTczNDg4NTczODQyNg%3D%3D.3-ccb7-5&oh=00_AfiaZeFnmn3CVeWNMQ86jNSAaisXkdJ8zV9h2N9LWca4pw&oe=692AF120&_nc_sid=22de04"
+    src: "",
+    alt: "Artwork by dokuzuu from Collab 1, October 20, 2024"
   },
   { title: "",
     category: "Collab 2 (name tbd)", 
@@ -42,7 +34,8 @@ const artPieces = [
     artist: "snail.www",
     month: "November",
     day: 28,
-    src: "https://scontent-lga3-3.cdninstagram.com/v/t51.29350-15/468569243_566788342627914_3613043542215816904_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjE0NDB4MTc3MS5zZHIuZjI5MzUwLmRlZmF1bHRfaW1hZ2UuYzIifQ&_nc_ht=scontent-lga3-3.cdninstagram.com&_nc_cat=106&_nc_oc=Q6cZ2QFVQy4JugmROa7uLvhRq_zRUXWUsJbYM__K5IQOJyck4N_WuVs6yeMdhYIr_zPJWELxjBTUysEMWbWPsPFmZybz&_nc_ohc=oyeD6vJ8CskQ7kNvwF8dUfs&_nc_gid=62oxODFaUrF3124ZXHz52A&edm=APoiHPcBAAAA&ccb=7-5&ig_cache_key=MzUxMTUxNjk3MDc4OTIyNjY4Nw%3D%3D.3-ccb7-5&oh=00_Afjql8Q1jlDz44YulkUW2ITkWK64gL1kw6mohiKQeNPoHQ&oe=692AE8B5&_nc_sid=22de04"
+    src: "",
+    alt: "Artwork by snail.www from Collab 2, November 28, 2024"
   },
   { title: "",
     category: "Collab 2 (name tbd)", 
@@ -50,7 +43,8 @@ const artPieces = [
     artist: "sewerratarv2",
     month: "November",
     day: 30,
-    src: "https://scontent-lga3-2.cdninstagram.com/v/t51.29350-15/468786823_562436203077297_5504026115032913005_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjEzNTB4MTYyMC5zZHIuZjI5MzUwLmRlZmF1bHRfaW1hZ2UuYzIifQ&_nc_ht=scontent-lga3-2.cdninstagram.com&_nc_cat=109&_nc_oc=Q6cZ2QHT3ZOuuuBo41OlTqWzOapZN8IzVRGBs2frbtP6GBv1kEb1rZWafbwi5wOUoCG7LoI&_nc_ohc=sksg9OtVgPQQ7kNvwEem7YE&_nc_gid=z0H8c9EGLpmp6unNYc4gRw&edm=APoiHPcBAAAA&ccb=7-5&ig_cache_key=MzUxMjc3MjU5NjYzNjIyNTQzMA%3D%3D.3-ccb7-5&oh=00_AfjFzoTKy_NGwKSKViDnUDNLPDHdwZuEb3-j2Aq-pDFTqA&oe=692D1462&_nc_sid=22de04"
+    src: "",
+    alt: "Artwork by sewerratarv2 from Collab 2, November 30, 2024"
   },
   { title: "",
     category: "Collab 2 (name tbd)", 
@@ -58,7 +52,8 @@ const artPieces = [
     artist: "kiyoshot",
     month: "December",
     day: 1,
-    src: "https://scontent-lga3-2.cdninstagram.com/v/t51.29350-15/469176897_2028057040959876_2835752985692770986_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjE0NDB4MTcyOC5zZHIuZjI5MzUwLmRlZmF1bHRfaW1hZ2UuYzIifQ&_nc_ht=scontent-lga3-2.cdninstagram.com&_nc_cat=100&_nc_oc=Q6cZ2QHT3ZOuuuBo41OlTqWzOapZN8IzVRGBs2frbtP6GBv1kEb1rZWafbwi5wOUoCG7LoI&_nc_ohc=E3Uq57vCypYQ7kNvwGsp-Ci&_nc_gid=z0H8c9EGLpmp6unNYc4gRw&edm=APoiHPcBAAAA&ccb=7-5&ig_cache_key=MzUxMzUwNDg4ODQ5MzA2Mzg0Ng%3D%3D.3-ccb7-5&oh=00_AfhcM-s0pTsG9wKA573KXqVVxB2XJIczUTyX0U8FTkLK4g&oe=692D1249&_nc_sid=22de04"
+    src: "",
+    alt: "Artwork by kiyoshot from Collab 2, December 1, 2024"
   },
   { title: "",
     category: "Collab 2 (name tbd)", 
@@ -66,7 +61,8 @@ const artPieces = [
     artist: "unga_bunga243",
     month: "December",
     day: 2,
-    src: "https://scontent-lga3-1.cdninstagram.com/v/t51.29350-15/469054371_943748877085911_7389252434414825319_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjE0MzF4MTc4OS5zZHIuZjI5MzUwLmRlZmF1bHRfaW1hZ2UuYzIifQ&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_cat=103&_nc_oc=Q6cZ2QHT3ZOuuuBo41OlTqWzOapZN8IzVRGBs2frbtP6GBv1kEb1rZWafbwi5wOUoCG7LoI&_nc_ohc=V0aIqtGL-AYQ7kNvwF8CrCM&_nc_gid=z0H8c9EGLpmp6unNYc4gRw&edm=APoiHPcBAAAA&ccb=7-5&ig_cache_key=MzUxNDIyODAzMTcxNjgwMjE0NQ%3D%3D.3-ccb7-5&oh=00_AfgD9oA-LiykzIZC3a5PIJFz7g5df3C4PbQb2Ke3VlfOlg&oe=692D0026&_nc_sid=22de04"
+    src: "",
+    alt: "Artwork by unga_bunga243 from Collab 2, December 2, 2024"
   },
   { title: "",
     category: "Collab 2 (name tbd)", 
@@ -74,7 +70,8 @@ const artPieces = [
     artist: "mjyukwie",
     month: "December",
     day: 4,
-    src: "https://scontent-lga3-2.cdninstagram.com/v/t51.29350-15/469277765_600363539080365_5148568048319780869_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjE0NDB4MTcyOC5zZHIuZjI5MzUwLmRlZmF1bHRfaW1hZ2UuYzIifQ&_nc_ht=scontent-lga3-2.cdninstagram.com&_nc_cat=109&_nc_oc=Q6cZ2QFN4YVvWfZG7xBEqnhiydLvqbR2INLKm0Wq9sILHfs91o_bR5tb4wBIDzG695AdfAI&_nc_ohc=AWLCQGF34MIQ7kNvwHhtlsg&_nc_gid=TmLbu4NRR8blcwQHZPrtdA&edm=APoiHPcBAAAA&ccb=7-5&ig_cache_key=MzUxNTY2ODU4NDUwMTg1MzYyOA%3D%3D.3-ccb7-5&oh=00_AfiS1z_vJ2Upl6qRtLBCanoaLm6o8FcYFeI5GxsVlumCJw&oe=692D0F74&_nc_sid=22de04"
+    src: "",
+    alt: "Artwork by mjyukwie from Collab 2, December 4, 2024"
   },
   { title: "",
     category: "Collab 2 (name tbd)", 
@@ -82,7 +79,8 @@ const artPieces = [
     artist: "ch.alks",
     month: "December",
     day: 5,
-    src: "https://scontent-lga3-2.cdninstagram.com/v/t51.29350-15/469255449_542700638568192_1287282974160348228_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQuaW1hZ2VfdXJsZ2VuLjE0NDB4MTcyOC5zZHIuZjI5MzUwLmRlZmF1bHRfaW1hZ2UuYzIifQ&_nc_ht=scontent-lga3-2.cdninstagram.com&_nc_cat=100&_nc_oc=Q6cZ2QFN4YVvWfZG7xBEqnhiydLvqbR2INLKm0Wq9sILHfs91o_bR5tb4wBIDzG695AdfAI&_nc_ohc=yKm_SB70DH8Q7kNvwGwpz7a&_nc_gid=TmLbu4NRR8blcwQHZPrtdA&edm=APoiHPcBAAAA&ccb=7-5&ig_cache_key=MzUxNjY3NDczMjgzNDQ1MzQ5NA%3D%3D.3-ccb7-5&oh=00_Afj33gOxOqm76hEoUkjHu4JbVcAIj7qnmAsCNTAVBwWs6A&oe=692D15FC&_nc_sid=22de04"
+    src: "",
+    alt: "Artwork by ch.alks from Collab 2, December 5, 2024"
   },
   { title: "",
     category: "Collab 2 (name tbd)", 
@@ -90,7 +88,8 @@ const artPieces = [
     artist: "alaudase",
     month: "December",
     day: 8,
-    src: "https://scontent-lga3-3.cdninstagram.com/v/t51.75761-15/469258045_17856313194328472_1721973465559187148_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ig_cache_key=MzUxODk3NTY5NzI1NjM3OTM2Ng%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTc2Mi5zZHIuQzMifQ%3D%3D&_nc_ohc=0E1AyMFLtkMQ7kNvwFG5UIs&_nc_oc=AdnKqn3J9woHKUNS7jmTV2kmAaupgpdzuhJR2FUgMme6H0N_6BXk8Qo_8UeZeGmu66k&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-3.cdninstagram.com&_nc_gid=TmLbu4NRR8blcwQHZPrtdA&oh=00_AfgUsOLz0GcNDis_-bVSaRt2yCr9glUDJQ0ornd1H5qDHA&oe=692CFAB5"
+    src: "",
+    alt: "Artwork by alaudase from Collab 2, December 8, 2024"
   },
   { title: "",
     category: "Collab 2 (name tbd)", 
@@ -98,7 +97,8 @@ const artPieces = [
     artist: "_.gaiahad",
     month: "January",
     day: 17,
-    src: "https://scontent-lga3-1.cdninstagram.com/v/t51.75761-15/473988571_17862234240328472_8516376889772467040_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ig_cache_key=MzU0NzY2OTY2MzY4MTI3MDgzOQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTU1MC5zZHIuQzMifQ%3D%3D&_nc_ohc=bQXXnGFMC8QQ7kNvwFeIbBa&_nc_oc=AdkJ5jmiQ2cmDlTtOk9WL8pP6XGzkAnMQM8rDYCSgzRqIrt5k9PYykk8R2hqYZngbjM&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_gid=oiDXNawv1IVruCij9YbFpQ&oh=00_Afn8Xz21Jii2ujh41uu1nmRlCZ3kp2KpqY5fe9FBLO2Yfg&oe=6935063C"
+    src: "",
+    alt: "Artwork by _.gaiahad from Collab 2, January 17, 2025"
   },
   { title: "",
     category: "Collab 3 (name tbd)", 
@@ -106,7 +106,7 @@ const artPieces = [
     artist: [ 
       "multiple artists", 
       "rayerm12", 
-      "unkown artist", 
+      "unknown artist", 
       "_.gaiahad", 
       "alaudase", 
       "khanashii_",
@@ -114,10 +114,11 @@ const artPieces = [
       "exgoeast",
       "kiyoshot",
       "mochi.wert"
-     ] ,
+    ],
     month: "January",
     day: 23,
-    src: "https://scontent-lga3-3.cdninstagram.com/v/t51.75761-15/474611399_17863038822328472_3102896072367228903_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ig_cache_key=MzU1MjI2Mzk3NTYyNzU2OTk0NQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4NzU0LnNkci5DMyJ9&_nc_ohc=ZGQJTBgvCFIQ7kNvwG74bWe&_nc_oc=AdlK-D3F2I9Wyvqbu0_ty0YZkppERWHZFFfrkcQ_ArUaeee_izKNcNlzOnNte89n9lM&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-3.cdninstagram.com&_nc_gid=oiDXNawv1IVruCij9YbFpQ&oh=00_Afk72mnuqkJs7Gdzf7IURS0WAeFpa6EsSIT35hh8rN7ibg&oe=69350B5D"
+    src: "",
+    alt: "Artwork by multiple artists from Collab 3, January 23, 2025"
   },
   { title: "",
     category: "Collab 3 (name tbd)", 
@@ -125,7 +126,8 @@ const artPieces = [
     artist: "rayerm12",
     month: "January",
     day: 25,
-    src: "https://scontent-lga3-1.cdninstagram.com/v/t51.75761-15/475266968_17863238727328472_5911627538561353735_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ig_cache_key=MzU1MzM4MDEzMDIzNjA1NTcyNQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5zZHIuQzMifQ%3D%3D&_nc_ohc=5v4lj5OPtjoQ7kNvwEYYzKM&_nc_oc=AdnPgj3aFwjKzzero6Ydo3iWrQBxe9tLAVYUtwXERvZHiXLeNiBjA_TnAHZtKgijdiA&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_gid=oiDXNawv1IVruCij9YbFpQ&oh=00_AfmNuMJM2RUjaZjfaQOlbI9LLG1JLqnlF9U1QP02pvlFGg&oe=6934DA8B"
+    src: "",
+    alt: "Artwork by rayerm12 from Collab 3, January 25, 2025"
   },
   { title: "",
     category: "Collab 3 (name tbd)", 
@@ -133,7 +135,8 @@ const artPieces = [
     artist: "unknown artist",
     month: "January",
     day: 28,
-    src: "https://scontent-lga3-2.cdninstagram.com/v/t51.75761-15/475551556_17863616232328472_1443843372512169205_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ig_cache_key=MzU1NTQ5NjQ2MzMyNjQ0NDQzMA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5zZHIuQzMifQ%3D%3D&_nc_ohc=aj2f3lsFR9IQ7kNvwFOcnXy&_nc_oc=AdmrrnYvmgmYY1BTlpku7LvI4qwvVFIS-E5aT61in_kZWKJ30W6I96m-NtP5qC98ZDs&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-2.cdninstagram.com&_nc_gid=oiDXNawv1IVruCij9YbFpQ&oh=00_AfkKWGy-zj55b_FNbzg5FbQga3bVvzEuFfFa-Rs6UZxLOw&oe=69350894"
+    src: "",
+    alt: "Artwork by unknown artist from Collab 3, January 28, 2025"
   },
   { title: "",
     category: "Collab 3 (name tbd)", 
@@ -141,7 +144,8 @@ const artPieces = [
     artist: "_.gaiahad",
     month: "January",
     day: 30,
-    src: "https://scontent-lga3-2.cdninstagram.com/v/t51.75761-15/475428390_17863946415328472_4194126173133922732_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ig_cache_key=MzU1NzM5ODk5ODg4MTk1MjAyNQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5zZHIuQzMifQ%3D%3D&_nc_ohc=r1uu2tGfWJQQ7kNvwE1ULwk&_nc_oc=Adl4uGm_1Bi2RvKQUCfi1nAelWbwimI5op447cdn6HhX4a_Mxa2_UCYTYrR1oVkXyFI&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-2.cdninstagram.com&_nc_gid=oiDXNawv1IVruCij9YbFpQ&oh=00_AfnIGOkiQoI_nzaY0qvd2gqwbeWJH1Sn1OH5Sp1EvNXlCw&oe=6934D542"
+    src: "",
+    alt: "Artwork by _.gaiahad from Collab 3, January 30, 2025"
   },
   { title: "",
     category: "Collab 3 (name tbd)", 
@@ -149,7 +153,8 @@ const artPieces = [
     artist: "alaudase",
     month: "January",
     day: 31,
-    src: "https://scontent-lga3-2.cdninstagram.com/v/t51.75761-15/475738281_17864024271328472_1039248618510189678_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ig_cache_key=MzU1Nzg1MTgxMzMxNTUzMTQ3Nw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5zZHIuQzMifQ%3D%3D&_nc_ohc=3WFXxi_EntMQ7kNvwHNU2cF&_nc_oc=Adn74x1GAmS2F31Vo3UXOi2iJWYzaUqdBFmByylly-pnup8ErSXfkS45oLVunGEkB1Y&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-2.cdninstagram.com&_nc_gid=oiDXNawv1IVruCij9YbFpQ&oh=00_Afm64AuZVuoIvtEXjIha-I8TTlK0LSD2vB_eaRIZDRhMZg&oe=6934E127"
+    src: "",
+    alt: "Artwork by alaudase from Collab 3, January 31, 2025"
   },
   { title: "",
     category: "Collab 3 (name tbd)", 
@@ -157,7 +162,8 @@ const artPieces = [
     artist: "khanashii_",
     month: "February",
     day: 2,
-    src: "https://scontent-lga3-3.cdninstagram.com/v/t51.75761-15/476137696_17864267460328472_1613198709888328208_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ig_cache_key=MzU1OTIyMDY5NTY4NzA0NzU0MQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5zZHIuQzMifQ%3D%3D&_nc_ohc=8YuAaC7wp5gQ7kNvwFEAoAq&_nc_oc=AdmbmJD784LWUZMWaaF7wyTr3tRqnwyrDHk81ffzdBNSAukp9_S2Pj96zRg_fXUhP8-MXaSTFyIaA0UmHIziCldV&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-3.cdninstagram.com&_nc_gid=PGP9dD83zWOV4wLuS8_bnA&oh=00_AfiradEXB6SM4aBnAkczvKlWFY0f9z06G03JJ4fFORY75w&oe=692AE245"
+    src: "",
+    alt: "Artwork by khanashii_ from Collab 3, February 2, 2025"
   },
   { title: "",
     category: "Collab 3 (name tbd)", 
@@ -165,7 +171,8 @@ const artPieces = [
     artist: "mjyukwie",
     month: "February",
     day: 3,
-    src: "https://scontent-lga3-2.cdninstagram.com/v/t51.75761-15/475910410_17864458836328472_3727042175878271622_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ig_cache_key=MzU2MDI5MDQ1NDA0NzEzODIwNg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5zZHIuQzMifQ%3D%3D&_nc_ohc=gnPZ7mf44UkQ7kNvwGu4dSN&_nc_oc=AdmfgWiFdyxoXp5iisNBsqKXnC1dOb9rMTadWjPBzc_gJabFeaaP3ZnFdrUuThSMIbs&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-2.cdninstagram.com&_nc_gid=oiDXNawv1IVruCij9YbFpQ&oh=00_AfmyyHhJn772-FiR6IovoB9m6dGDeyYrjnAbbwzmckcq-Q&oe=6934F9D6"
+    src: "",
+    alt: "Artwork by mjyukwie from Collab 3, February 3, 2025"
   },
   { title: "",
     category: "Collab 3 (name tbd)", 
@@ -173,7 +180,8 @@ const artPieces = [
     artist: "exgoeast",
     month: "February",
     day: 13,
-    src: "https://scontent-lga3-1.cdninstagram.com/v/t51.75761-15/478127977_17865807846328472_7037228037265567265_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ig_cache_key=MzU2NzQzMzE4MDk1Mjk2MTk1Mg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5zZHIuQzMifQ%3D%3D&_nc_ohc=osvyn4Q5yPEQ7kNvwEfwS0n&_nc_oc=AdnRBfqnLO0_SHOyHH5UksR6l6hS-NoLJD3d69Qecg_sgQ9GMWYLdD2qaqm6E-Qp7vE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_gid=YK9xyP494rJOFHmu1TjyMQ&oh=00_AfmTjJ5HjazD0AIDmBjDKzhavac7ckIGJgX7CshUNs8vgA&oe=6934F21B"
+    src: "",
+    alt: "Artwork by exgoeast from Collab 3, February 13, 2025"
   },
   { title: "",
     category: "Collab 3 (name tbd)", 
@@ -181,7 +189,8 @@ const artPieces = [
     artist: "kiyoshot",
     month: "February",
     day: 13,
-    src: "https://scontent-lga3-1.cdninstagram.com/v/t51.75761-15/479630146_17865807936328472_7470310283874539950_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ig_cache_key=MzU2NzQzMzY5OTY3MDk4MjAyMA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5zZHIuQzMifQ%3D%3D&_nc_ohc=qgaPuRr9MPQQ7kNvwFjJUGR&_nc_oc=AdnQxokxFWG3iMaopY0pn-mQ_PafZNzMnPMY7G_Xo85EcuGxMMhTNNDyv7A0w3t0MEE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_gid=YK9xyP494rJOFHmu1TjyMQ&oh=00_AflAJuUb4UK91MqOomr5BF26gS-zdpF_lPFKrF1ibK2VMw&oe=6934E80D"
+    src: "",
+    alt: "Artwork by kiyoshot from Collab 3, February 13, 2025"
   },
   { title: "",
     category: "Collab 3 (name tbd)", 
@@ -189,7 +198,8 @@ const artPieces = [
     artist: "mochi.wert",
     month: "February",
     day: 13,
-    src: "https://scontent-lga3-1.cdninstagram.com/v/t51.75761-15/478644771_17865808014328472_216919383237443733_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ig_cache_key=MzU2NzQzNDE5ODE4OTMzMjgwMw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5zZHIuQzMifQ%3D%3D&_nc_ohc=T7AKSaCc_jwQ7kNvwHZ8a51&_nc_oc=AdmiJl7BWM17JtgeNPa3j9-JW1wy7kN_1dNwtX2iqTi-d4bEOFLbdyEERw9SVeqWYgM&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_gid=YK9xyP494rJOFHmu1TjyMQ&oh=00_AflHVhWKQfCjmYFy2u1IX-dcvCLGFgzlkoqjMnCgenvWsA&oe=6934E8A4"
+    src: "",
+    alt: "Artwork by mochi.wert from Collab 3, February 13, 2025"
   },
   { title: "",
     category: "Collab 4 (name tbd)", 
@@ -197,7 +207,8 @@ const artPieces = [
     artist: "kiyoshot",
     month: "February",
     day: 14,
-    src: "https://scontent-lga3-2.cdninstagram.com/v/t51.75761-15/479396992_17865985875328472_5216064877299377576_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ig_cache_key=MzU2ODMwMzg3MzgwMzM4MzMzNw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTc2NC5zZHIuQzMifQ%3D%3D&_nc_ohc=Mih43QvlIlUQ7kNvwEEpfYh&_nc_oc=Adn_3wk6OVIcvWRu_j6hS28b1X5yc7nIVXeM5LIfcEJBRDJQ7Ke_bVPECX6TFTZ4b-Q&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-2.cdninstagram.com&_nc_gid=YK9xyP494rJOFHmu1TjyMQ&oh=00_AfnTefI0l2T600fYHGtAggns0AU3jZDDYYHI0ek8dn1Amw&oe=6934DEB7"
+    src: "",
+    alt: "Artwork by kiyoshot from Collab 4, February 14, 2025"
   },
   { title: "",
     category: "Collab 4 (name tbd)", 
@@ -205,7 +216,8 @@ const artPieces = [
     artist: "snail.www",
     month: "February",
     day: 15,
-    src: "https://scontent-lga3-3.cdninstagram.com/v/t51.75761-15/479541211_17866119546328472_8077892160374564813_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ig_cache_key=MzU2ODk5MjgyMjkxMzg5NjQ2Nw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTc2NC5zZHIuQzMifQ%3D%3D&_nc_ohc=NeDgXO_6-NMQ7kNvwGIksMV&_nc_oc=AdlG0ECfrILBwBoikIv1MMXrpcxslOO44LJk-TtVs3Us4-eTVSiHmgG5wQjTbw6qqwo&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-3.cdninstagram.com&_nc_gid=YK9xyP494rJOFHmu1TjyMQ&oh=00_Afmt48m1Rql-CCApIjOcEg9jZ9LYEIGXYW5-O55C9RMqMA&oe=69350632"
+    src: "",
+    alt: "Artwork by snail.www from Collab 4, February 15, 2025"
   },
   { title: "",
     category: "Collab 4 (name tbd)", 
@@ -213,7 +225,8 @@ const artPieces = [
     artist: "rayerm12",
     month: "February",
     day: 17,
-    src: "https://scontent-lga3-1.cdninstagram.com/v/t51.75761-15/479547347_17866392150328472_4603431243077259147_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ig_cache_key=MzU3MDM1MjY2Nzc1OTE1NjEwNQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5zZHIuQzMifQ%3D%3D&_nc_ohc=YJ1MJ4zE9cQQ7kNvwHUobuQ&_nc_oc=AdkB5wiKZiLqNQTWt4j27150WPMkCJfEUq3-kIv_0IzES7mYL9nu7onkZa83qxyvY9w&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_gid=YK9xyP494rJOFHmu1TjyMQ&oh=00_AfmFSnX6nZ0wXWF9qCE7R6NeJjjaOINrDmHnWaTIhZxeCw&oe=69350168"
+    src: "",
+    alt: "Artwork by rayerm12 from Collab 4, February 17, 2025"
   },
   { title: "",
     category: "Collab 4 (name tbd)", 
@@ -221,7 +234,8 @@ const artPieces = [
     artist: "unknown artist",
     month: "February",
     day: 20,
-    src: "https://scontent-lga3-3.cdninstagram.com/v/t51.75761-15/480887767_17866754076328472_4305111168125646238_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ig_cache_key=MzU3MjIzMjEzMTY5MDU4Mzk4Mw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjcyN3g4MDIuc2RyLkMzIn0%3D&_nc_ohc=cZkFz6WPXtcQ7kNvwGNzzlB&_nc_oc=AdkYWqE0T47SyMsJRC58p7b40tPdoVp5qs1pBrcRW63FA6EytoeKISUfZvuoAusz9n4&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-3.cdninstagram.com&_nc_gid=YK9xyP494rJOFHmu1TjyMQ&oh=00_AfkRIZ7gR2SvjER2YA4FVJkt74mn9ZekKHJBjNVCq8UqBA&oe=6934FC04"
+    src: "",
+    alt: "Artwork by unknown artist from Collab 4, February 20, 2025"
   },
   { title: "",
     category: "Collab 4 (name tbd)", 
@@ -229,7 +243,8 @@ const artPieces = [
     artist: "mochi.wert",
     month: "February",
     day: 20,
-    src: "https://scontent-lga3-1.cdninstagram.com/v/t51.75761-15/480678173_17866832793328472_6187513935507210969_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ig_cache_key=MzU3MjY1MjMxMjM0MzMwNTM2Nw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjExOTh4MTQ5Ny5zZHIuQzMifQ%3D%3D&_nc_ohc=ps1LQXTJdW8Q7kNvwG67O6j&_nc_oc=Adnn4RV7zd-KB9N22UldGZY7PKD1GHiypShbx_hMgoUIZ0hb5qH1YuWSLLBIiQWIz0w&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_gid=YK9xyP494rJOFHmu1TjyMQ&oh=00_Aflj8TX0R2OERVKk8AYWf954J7tktpYxTJNTkSqqck_VeQ&oe=693506D5"
+    src: "",
+    alt: "Artwork by mochi.wert from Collab 4, February 20, 2025"
   },
   { title: "",
     category: "Collab 4 (name tbd)", 
@@ -237,205 +252,182 @@ const artPieces = [
     artist: "turkishwarrior420",
     month: "February",
     day: 21,
-    src: "https://scontent-lga3-2.cdninstagram.com/v/t51.75761-15/481228984_17866958793328472_2970684197969268193_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ig_cache_key=MzU3MzI4OTc2ODc4ODcyMzE3Nw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5zZHIuQzMifQ%3D%3D&_nc_ohc=xBRazWIIUqAQ7kNvwHEZCEU&_nc_oc=AdlyhTFBbd79tyK2k6UB3g_CIXf1_TRBPvEvexs97hzxviMr2p4wbUkqWlrQRHqreWo&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-2.cdninstagram.com&_nc_gid=YK9xyP494rJOFHmu1TjyMQ&oh=00_AfkTVoW7jaNLbfdWATN290BJwOPPtxpwNVx1s8IhKlN5BQ&oe=69350A9E"
-  },
-  { title: "",
-    category: "Collab 4 (name tbd)", 
-    year: 2025,
-    artist: "alaudase",
-    month: "February",
-    day: 25,
-    src: "https://scontent-lga3-3.cdninstagram.com/v/t51.75761-15/481395744_17867520726328472_3638390348465771642_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ig_cache_key=MzU3NjEzODUwNjMzNDMzOTkyNg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTc2NC5zZHIuQzMifQ%3D%3D&_nc_ohc=FH5nvmwyjSMQ7kNvwGFC2ij&_nc_oc=Adko5_axDOZRlX0Ho5kO0CoR0Q-Oo7CiF1l67m9vQ4bVIfNVppEbrnEcuASQGpNlPCE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-3.cdninstagram.com&_nc_gid=YK9xyP494rJOFHmu1TjyMQ&oh=00_AflytWr5dh6ajFpc6L6gsWnRwpk94k_oJ6h576FaPRuOlw&oe=6934E008"
-  },
-  { title: "",
-    category: "Collab 4 (name tbd)", 
-    year: 2025,
-    artist: "krp.sy",
-    month: "February",
-    day: 26,
-    src: "https://scontent-lga3-3.cdninstagram.com/v/t51.75761-15/482176454_17867643072328472_66754733247133635_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ig_cache_key=MzU3NjY4NTk1NjAxOTEzNDkwOA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEyNDF4MTQzOS5zZHIuQzMifQ%3D%3D&_nc_ohc=si-9kDndoUgQ7kNvwHJqVYk&_nc_oc=Adny81BBxKCvkQ1ZvyH4bzLJPTAzrR1OEApoa2ilbkWjEenjF66CDSoyYZnt_yviCaU&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-3.cdninstagram.com&_nc_gid=YK9xyP494rJOFHmu1TjyMQ&oh=00_AflqdJQuNMPASr4zJ_M0le48VRI9JKuhIZdS-LWBepik4w&oe=6934F653"
-  },
-  { title: "",
-    category: "individual piece", 
-    year: 2025,
-    artist: [
-      "multiple artists",
-      "kiyoshot",
-      "wwuc_a"
-    ],
-    month: "April",
-    day: 30,
-    src: "https://scontent-lga3-3.cdninstagram.com/v/t51.75761-15/494470399_17875806018328472_7951028752633202812_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ig_cache_key=MzYyMjIwMzk5NDEyMzM5ODI0Mg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTgwMC5zZHIuQzMifQ%3D%3D&_nc_ohc=Mvhlx4QdA2wQ7kNvwFb5beK&_nc_oc=AdlazG4w1CaIGAcOOMBBRfsrAJKvhE4wsdcPQfjuw8dsTPCnZOiZHRWLzGSA0Q_X4kc&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-3.cdninstagram.com&_nc_gid=q2APdQUX-DaSNJ8Sp_pXaA&oh=00_AfmsoNIUo4wmMboaudAF9XJ-g2awZsT14opzpy8K9Gp8Gg&oe=693653D3"
-  },
-  { title: "",
-    category: "Collab 5 (name tbd)", 
-    year: 2025,
-    artist: [
-      "multiple artists",
-      "mochi.wert",
-      "snail.www",
-      "plebkitty",
-    ],
-    month: "June",
-    day: 20,
-    src: "https://scontent-lga3-1.cdninstagram.com/v/t51.75761-15/502342884_17882402667328472_3262100419783131272_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ig_cache_key=MzY1OTI0NTQ3OTMzNDY3MzE1OQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwMTJ4MTAxNS5zZHIuQzMifQ%3D%3D&_nc_ohc=3o_HevOSMowQ7kNvwEhqNRn&_nc_oc=AdlrVEdnOXUSLd7tzDkbXRnDCqRFiMH4iw-drlyRq2KpyKBypFEr1vFE5IMnoNs8Av0&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_gid=lQcJ3XzibkHHB7Q0dH50dQ&oh=00_AfmWiGFJemtfEmUBtF62wndchOcM4i58DMYuIykHDMr9vQ&oe=6934EF7F"
-  },
-  { title: "",
-    category: "Collab 5 (name tbd)", 
-    year: 2025,
-    artist: [
-      "multiple artists",
-      "rayerm12",
-      "_anonmaly",
-      "alaudase",
-    ],
-    month: "June",
-    day: 20,
-    src: "https://scontent-lga3-3.cdninstagram.com/v/t51.75761-15/502575317_17882402400328472_3378056909108302229_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ig_cache_key=MzY1OTI0MzkyMjQxNzM2Nzg3Mg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwMTJ4MTA5OC5zZHIuQzMifQ%3D%3D&_nc_ohc=h1Qy5VkDQfkQ7kNvwHs5iDu&_nc_oc=AdlFTZ5oAjjEpoQWhbFDmsfmI5z5_7AcG8FKbC4JOmRo8Dlo38FtB1qw4rwli-DdOpc&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-3.cdninstagram.com&_nc_gid=lQcJ3XzibkHHB7Q0dH50dQ&oh=00_AflkXRZ9QkqaZVM96gMbVf6mtEaTthP8i6SO3OYK36gdJQ&oe=6934D673"
-  },
-  { title: "",
-    category: "individual piece", 
-    year: 2025,
-    artist: "jsmintea._",
-    month: "October",
-    day: 16,
-    src: "https://scontent-lga3-3.cdninstagram.com/v/t51.82787-15/566532463_17896771872328472_4548167211190524062_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ig_cache_key=Mzc0NTEwMDk5NzQ1OTcyNDE5Mg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuQzMifQ%3D%3D&_nc_ohc=XYhIMuBhgs4Q7kNvwFxNajh&_nc_oc=Adm_Jpam3037H-dIpPQMYxPq9sarMs7n0L7YuYde0c1G9_SfG88qMdO7OYymOuZATFo&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-3.cdninstagram.com&_nc_gid=lQcJ3XzibkHHB7Q0dH50dQ&oh=00_Afl4Ia465fFl--y8zf52o6ffjXX4vqTm_LisEturQWMU5g&oe=69350B58"
-  },
-  { title: "",
-    category: "Collab 6 (name tbd)", 
-    year: 2025,
-    artist: "multiple artists",
-    month: "October",
-    day: 22,
-    src: "https://scontent-lga3-3.cdninstagram.com/v/t51.82787-15/569894892_17897446650328472_119046023955486131_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ig_cache_key=Mzc0OTQ3NDkyOTQ1NzU0NjQ0NQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTU5Ny5zZHIuQzMifQ%3D%3D&_nc_ohc=a_NdXmHsKosQ7kNvwHWvmGv&_nc_oc=AdkURVKyafleNAKwjA8AE6HfLm-DZJ3YQQKxxI1GiviSo3AWCnUPvbYLhndOVsLpPME&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-3.cdninstagram.com&_nc_gid=lQcJ3XzibkHHB7Q0dH50dQ&oh=00_AfkMuFon5Nz4zYfWLSgHARVe-v_kGb7if1KttNY41ZNg_Q&oe=6934FA56"
-  },
-  { title: "",
-    category: "Collab 7 (name tbd)", 
-    year: 2025,
-    artist: "alaudaart",
-    month: "November",
-    day: 3,
-    src: "https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/573223851_17898784236328472_2082037671002591921_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ig_cache_key=Mzc1ODE2NTQ0OTk2MDU5NTUzMQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzMifQ%3D%3D&_nc_ohc=M_EFdgaqLJgQ7kNvwHhEjAv&_nc_oc=AdmzBmn5lVoaka6-efBnVa73epg_GQIXttuWlkaBC4EEInFXKOKkTouLfSYt11RD7Fk&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_gid=lQcJ3XzibkHHB7Q0dH50dQ&oh=00_AfmadYiJn_oXXg92Hi35AurnLcW4ZW5_qsLnAzTCsB3pIQ&oe=6934F7EB"
-  },
-  { title: "",
-    category: "Collab 7 (name tbd)", 
-    year: 2025,
-    artist: "mjyukwie",
-    month: "November",
-    day: 3,
-    src: "https://scontent-lga3-2.cdninstagram.com/v/t51.82787-15/573334011_17898784593328472_9108261510708390876_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=100&ig_cache_key=Mzc1ODE2NTkyNzAzNzUxNDI4MA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzMifQ%3D%3D&_nc_ohc=jxNjyV99px0Q7kNvwGopqs9&_nc_oc=AdlE5aYLbTYKwv19gW-cgDBuLL6-mL29JTrY1K7aFjMrtx5Zc1_wVVSjxccwRO5_g7Y&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-2.cdninstagram.com&_nc_gid=lQcJ3XzibkHHB7Q0dH50dQ&oh=00_Afk7egkpFZTPw7l9eBjWuL78PTDnb4UQEvNdVGxC5_iLyg&oe=69350847"
-  },
-  { title: "",
-    category: "Collab 7 (name tbd)", 
-    year: 2025,
-    artist: "_.gaiahad",
-    month: "November",
-    day: 4,
-    src: "https://scontent-lga3-2.cdninstagram.com/v/t51.82787-15/576007899_17898853716328472_7711975080975302990_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ig_cache_key=Mzc1ODYwNzg1MTg0MjAzMjM4Nw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjcyNng5NTUuc2RyLkMzIn0%3D&_nc_ohc=QlxylNKkhCwQ7kNvwFgi8gG&_nc_oc=AdlH9GpXcIRk6P0yZVYgmHaD7modm4ej6aP5EXO51xAYLhQLqTEmdz_bFcHnjYEAoy0&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-2.cdninstagram.com&_nc_gid=lQcJ3XzibkHHB7Q0dH50dQ&oh=00_AfnPMMwYXbaXhT15meoe_LUSIKB9V2F15KvNjtcbhS3KiQ&oe=6934E37B"
-  },
-  { title: "",
-    category: "Collab 7 (name tbd)", 
-    year: 2025,
-    artist: "katherine.ze26",
-    month: "November",
-    day: 4,
-    src: "https://scontent-lga3-3.cdninstagram.com/v/t51.82787-15/572808092_17898854238328472_2867216514834296294_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ig_cache_key=Mzc1ODYxMjM3NzgzOTk3NDEwMQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTg3OC5zZHIuQzMifQ%3D%3D&_nc_ohc=qOLnjZdZWoAQ7kNvwFa0Q06&_nc_oc=AdmWGpixSAtcn7yb8cD5hEsOlNV3a36PFHjtC9Ao110B4TPUeHkBfcSUSA_PEW65ZRE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-3.cdninstagram.com&_nc_gid=9IgQTo1BU4HrKgzRywKajg&oh=00_AfnL_yXZh3i2tShWTlhHORuLDjVa3RUybClkUAWd4Mgo3A&oe=6934F066"
-  },
-  { title: "",
-    category: "Collab 8 (name tbd)", 
-    year: 2025,
-    artist: [
-      "multiple artists",
-      "snailxiy",
-      "auventz",
-      "turkishwarrior420",
-      "jsmintea._",  
-      "sewerratarv2", 
-      "exgoeast"
-    ],
-    month: "November",
-    day: 6,
-    src: "https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/573546069_17899113858328472_4464602018605727401_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&ig_cache_key=Mzc2MDMzMzY3NDM4MzE1OTY0OQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkxOS5zZHIuQzIifQ%3D%3D&_nc_ohc=mRnAs4tA4ewQ7kNvwFfu_1o&_nc_oc=AdnYx7ppVViSupByVbXfkZB8FSWNMpmCZg1tsHyysl1WscpIBhiCdmKptcs7GWQPSlE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_gid=_jfHjvq0N4lOQG1dfT1otg&oh=00_AflUOj64n_VvWsVVOpLIMUtCBoI84g8DlXWF5GSEIaW2VA&oe=69379D64"
-  },
-  { title: "",
-    category: "Collab 8 (name tbd)", 
-    year: 2025,
-    artist: "snailxiy",
-    month: "November",
-    day: 6,
-    src: "https://scontent-lga3-3.cdninstagram.com/v/t51.82787-15/575188357_17899113873328472_4851010784938596939_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ig_cache_key=Mzc2MDMzMzY3NDU4NDQ4MTIyMQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuQzIifQ%3D%3D&_nc_ohc=XtL3OKO9zWMQ7kNvwGS96Zo&_nc_oc=AdmnGRf-R8z70cL4O8SMh7sphp6QGH__F3b20-CCOcv5dSwAlhoTM-3utb9-FvZEzZ0&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-3.cdninstagram.com&_nc_gid=_jfHjvq0N4lOQG1dfT1otg&oh=00_AfmIqRC2FmKU5phM59wHUBovLuLRoNr_vWWk8YWa83FPQQ&oe=69376B91"
-  },
-  { title: "",
-    category: "Collab 8 (name tbd)", 
-    year: 2025,
-    artist: "auventz",
-    month: "November",
-    day: 6,
-    src: "https://scontent-lga3-3.cdninstagram.com/v/t51.82787-15/574733947_17899113882328472_6323810450337066956_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ig_cache_key=Mzc2MDMzMzY3NDQyNTA5OTQyOQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTQ0MC5zZHIuQzIifQ%3D%3D&_nc_ohc=mp7-lYMC30wQ7kNvwGdIItn&_nc_oc=Adlj-VW3ffe7M9z7EWfm8GloyAZsDdOzShrX6yfWAsqLgEQFvEcTDqoJKj5QTwgqGsA&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-3.cdninstagram.com&_nc_gid=_jfHjvq0N4lOQG1dfT1otg&oh=00_AfnGGPMTT3SW4PueWOFMiYR9R28Sgpeqr1wMdbF7__REUQ&oe=69377B45"
-  },
-  { title: "",
-    category: "Collab 8 (name tbd)", 
-    year: 2025,
-    artist: "turkishwarrior420",
-    month: "November",
-    day: 6,
-    src: "https://scontent-lga3-3.cdninstagram.com/v/t51.82787-15/573884433_17899113891328472_4180970203161262044_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ig_cache_key=Mzc2MDMzMzY3NDM4MzE4MDgxMg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzIifQ%3D%3D&_nc_ohc=QYf-JtZaODQQ7kNvwHKreDx&_nc_oc=Adm6FbdIz1Vw5S0qn9L42XrS1zgg1j4VhFs_9GGh-fQI9V04Qs6p3D8iOwbDRilIJ_w&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-3.cdninstagram.com&_nc_gid=_jfHjvq0N4lOQG1dfT1otg&oh=00_AfnBHtjTLBD8fhPoCliTdXHfh87FPGEAOgWyrnM_kW5kvw&oe=69378DED"
-  },
-  { title: "",
-    category: "Collab 8 (name tbd)", 
-    year: 2025,
-    artist: "jsmintea._",
-    month: "November",
-    day: 6,
-    src: "https://scontent-lga3-1.cdninstagram.com/v/t51.82787-15/573972798_17899113900328472_8463528729617940301_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ig_cache_key=Mzc2MDMzMzY3NDM4MzE1Njg0NA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjExMDB4MTQ2Ni5zZHIuQzIifQ%3D%3D&_nc_ohc=6Te5-0vVbAwQ7kNvwE-4STM&_nc_oc=Adl18EFx97rqt5u9j6HorDA7vnAepdLcbCKKtili-MTvMcfcfQAbbAIzyYXwmqusJd8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_gid=_jfHjvq0N4lOQG1dfT1otg&oh=00_AfmAUkfP7dfJ7yubJ2bjxWYIXNHWuNHi_yZkCJCH7ZVGSA&oe=69378B34"
-  },
-  { title: "",
-    category: "Collab 8 (name tbd)", 
-    year: 2025,
-    artist: "sewerratarv2",
-    month: "November",
-    day: 6,
-    src: "https://scontent-lga3-2.cdninstagram.com/v/t51.82787-15/574112102_17899113912328472_3693632950377894189_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ig_cache_key=Mzc2MDMzMzY3NDM4MzE5NTY1Nw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTkyMC5zZHIuQzIifQ%3D%3D&_nc_ohc=kojHr6iADbMQ7kNvwGD3oql&_nc_oc=AdneVoHDlLH8SncgymCm5Zs8DkuH_55CoJ-aRZ96ITZ96UEQk0BnFvgpFTv86X5vmsY&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-2.cdninstagram.com&_nc_gid=_jfHjvq0N4lOQG1dfT1otg&oh=00_AfniZpZfb_R8SYRB3Y01DQj8UXgqpQvz8fgA2gTn9oMaVA&oe=69378D83"
-  },
-  { title: "",
-    category: "Collab 8 (name tbd)", 
-    year: 2025,
-    artist: "exgoeast",
-    month: "November",
-    day: 6,
-    src: "https://scontent-lga3-2.cdninstagram.com/v/t51.82787-15/573716771_17899113921328472_1647268190767349838_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=105&ig_cache_key=Mzc2MDMzMzY3NDM4MzE3ODc5Mw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjg4OHgxMTg0LnNkci5DMiJ9&_nc_ohc=8BBwpJq5Um8Q7kNvwF45Vux&_nc_oc=AdmKfqGSSqcnMv4gKtVHbDN7O407S49kYHjEbRB5C4kisqD4LcbQCyaI0PIGscD_k98&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-2.cdninstagram.com&_nc_gid=_jfHjvq0N4lOQG1dfT1otg&oh=00_AfmijU8Okl_nLTjqyircZnDp2prEMsQB1c_QAoEsNgM53g&oe=69379EF6"
-  },
-  { title: "",
-    category: "Collab 9 (name tbd)", 
-    year: 2025,
-    artist: [
-      "multiple artists",
-      "jsmintea._",
-      "snailxiy",
-      "mjyukwie"
-    ],
-    month: "November",
-    day: 10,
-    src: "https://scontent-lga3-3.cdninstagram.com/v/t51.82787-15/575968010_17899571445328472_5625615237592748352_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ig_cache_key=Mzc2MzI2NzUzOTg5MjQzOTk1Ng%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTc5OC5zZHIuQzIifQ%3D%3D&_nc_ohc=T2PvXXGfmc8Q7kNvwH8244u&_nc_oc=AdmWAFHcm4r7mwN_v4YoRPVkXpsCVFI4taZCM0ntvggrfTP9ug6wC3annFmynycnCvs&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-lga3-3.cdninstagram.com&_nc_gid=qCrbpB5xH7cWU4aXObO68A&oh=00_AfmPzIWjjnRuFPF5vlB-jJLsa1JTKSO_hwUxOTwc18LdPA&oe=6937A3B8"
-  },
+    src: "",
+    alt: "Artwork by turkishwarrior420 from Collab 4, February 21, 2025"
+  }
 ]
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
 
-setupCounter(document.querySelector('#counter'))
+function injectGallery(pieces) {
+  const gallery = document.getElementById("gallery")
+  if (!gallery) return
+
+  gallery.innerHTML = "" // clear existing content
+
+  pieces.forEach(piece => {
+    const card = document.createElement("article")
+    card.className = "art-card"
+
+    const artists = Array.isArray(piece.artist)
+      ? piece.artist.join(", ")
+      : piece.artist
+
+    card.innerHTML = `
+      <img src="${piece.src}" alt="${piece.title || "artwork"}" loading="lazy" />
+      <div class="meta">
+        <p class="category">${piece.category}</p>
+        <p class="artist">${artists}</p>
+        <p class="date">${piece.month} ${piece.day}, ${piece.year}</p>
+      </div>
+    `
+
+    gallery.appendChild(card)
+  })
+}
+
+function inject(item) {
+  const container = document.querySelector(".container");
+  if (!container) return;
+
+  const categories = Array.isArray(item.category)
+    ? item.category.map(c => c.toLowerCase()).join(", ")
+    : String(item.category).toLowerCase();
+
+  const artist = Array.isArray(item.artist)
+    ? item.artist.join(", ")
+    : item.artist;
+
+  container.insertAdjacentHTML(
+    "beforeend",
+    `<div class="card" data-cat="${categories}">
+      <img src="${item.src}" alt="${item.alt || item.name}" />
+      <h2>${item.name || "Untitled"}</h2>
+      <h3>${artist}</h3>
+      <p>${item.published || ""}</p>
+    </div>`
+  );
+}
+
+/* -----------------------------
+   Modal (event delegation)
+----------------------------- */
+function enableModal() {
+  const modal = document.getElementById("modal");
+
+  document.querySelector(".container").addEventListener("click", (event) => {
+    const card = event.target.closest(".card");
+    if (!card) return;
+
+    modal.querySelector("#modalImg").src =
+      card.querySelector("img").src;
+    modal.querySelector("#modalName").textContent =
+      card.querySelector("h2").textContent;
+    modal.querySelector("#modalArtist").textContent =
+      card.querySelector("h3").textContent;
+    modal.querySelector("#modalYear").textContent =
+      card.querySelector("p").textContent;
+
+    modal.classList.add("show");
+  });
+
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      modal.classList.remove("show");
+    }
+  });
+}
+
+/* -----------------------------
+   Filtering
+----------------------------- */
+function filterByCategory(category) {
+  const target = category.toLowerCase();
+
+  document.querySelectorAll(".card").forEach((card) => {
+    const cats = card.dataset.cat;
+    card.style.display =
+      target === "all" || cats.includes(target) ? "" : "none";
+  });
+}
+
+function setupFilterButtons() {
+  document.querySelectorAll(".filter__buttons").forEach((button) => {
+    button.addEventListener("click", () => {
+      filterByCategory(button.textContent.trim());
+    });
+  });
+}
+
+/* -----------------------------
+   Random Art of the Day
+----------------------------- */
+function randomArtOfTheDay() {
+  const img = document.getElementById("artofDayImg");
+  if (!img || !artPieces.length) return;
+
+  const item = artPieces[Math.floor(Math.random() * artPieces.length)];
+  img.src = item.src || "";
+  img.alt = item.alt || item.title || "";
+}
+
+/* -----------------------------
+   DOM Ready
+----------------------------- */
+document.addEventListener("DOMContentLoaded", () => {
+  // Use the defined artPieces array
+  artPieces.forEach(inject);
+
+  // also populate the #gallery if present
+  const galleryEl = document.getElementById("gallery");
+  if (galleryEl) injectGallery(artPieces);
+
+  enableModal();
+  setupFilterButtons();
+  randomArtOfTheDay();
+  filterByCategory("All");
+
+  //upload info
+  const uploadForm = document.getElementById("uploadForm");
+  const uploadName = document.getElementById("uploadName");
+  const uploadArtist = document.getElementById("uploadArtist");
+  const uploadYear = document.getElementById("uploadYear");
+
+  if (uploadForm) {
+    uploadForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const fileInput = uploadForm.querySelector('input[type="file"]');
+      const file = fileInput ? fileInput.files[0] : null;
+      if (!file) return alert("Please select an image");
+
+      const newArt = {
+        name: (uploadName && uploadName.value) || "Untitled",
+        artist: (uploadArtist && uploadArtist.value) || "Unknown",
+        published: (uploadYear && uploadYear.value) || "",
+        src: URL.createObjectURL(file),
+        alt: (uploadName && uploadName.value) || "",
+        category: ["user upload"],
+      };
+
+      artPieces.push(newArt);
+      inject(newArt);
+      uploadForm.reset();
+    });
+  }
+
+  //theme toggle 
+  const toggleButton = document.getElementById("theme-toggle");
+  const body = document.body;
+
+  body.classList.add("warm");
+
+  if (toggleButton) {
+    toggleButton.addEventListener("click", () => {
+      if (body.classList.contains("warm")) {
+        body.classList.replace("warm", "cool"); // switch to dark
+      } else {
+        body.classList.replace("cool", "warm"); // switch to light
+      }
+    });
+  }
+});
