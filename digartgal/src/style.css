@@ -116,12 +116,11 @@ p {
 }
 
 /* filters */
-.filterSelect {
+.filters {
   width: 100vw;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
-  background-color: var(--secondary);
   color: var(--primary);
   padding: 1rem 0;
 }
@@ -135,7 +134,7 @@ p {
   color: var(--secondary);
   padding: 10px 38px;
   cursor: pointer;
-
+  
 }
 
 /* theme toggle */
@@ -147,7 +146,11 @@ p {
   background-color: var(--secondary);
   border-radius: 8px;
   cursor: pointer;
+  display: flex;
+  justify-self: center;
+  margin: 1rem auto;
 }
+
 
 /* upload */
 .upload__section {
