@@ -246,7 +246,7 @@ const artPieces = [
     src: "",
     alt: "Artwork by mochi.wert from Collab 4, February 20, 2025"
   },
-  { title: "",
+  { title: "Turkish Warrior 420",
     category: "Collab 4 (name tbd)", 
     year: 2025,
     artist: "turkishwarrior420",
@@ -257,177 +257,190 @@ const artPieces = [
   }
 ]
 
-
-function injectGallery(pieces) {
-  const gallery = document.getElementById("gallery")
-  if (!gallery) return
-
-  gallery.innerHTML = "" // clear existing content
-
-  pieces.forEach(piece => {
-    const card = document.createElement("article")
-    card.className = "art-card"
-
-    const artists = Array.isArray(piece.artist)
-      ? piece.artist.join(", ")
-      : piece.artist
-
-    card.innerHTML = `
-      <img src="${piece.src}" alt="${piece.title || "artwork"}" loading="lazy" />
-      <div class="meta">
-        <p class="category">${piece.category}</p>
-        <p class="artist">${artists}</p>
-        <p class="date">${piece.month} ${piece.day}, ${piece.year}</p>
-      </div>
-    `
-
-    gallery.appendChild(card)
-  })
-}
-
-function inject(item) {
-  const container = document.querySelector(".container");
-  if (!container) return;
-
-  const categories = Array.isArray(item.category)
-    ? item.category.map(c => c.toLowerCase()).join(", ")
-    : String(item.category).toLowerCase();
-
-  const artist = Array.isArray(item.artist)
-    ? item.artist.join(", ")
-    : item.artist;
-
-  container.insertAdjacentHTML(
-    "beforeend",
-    `<div class="card" data-cat="${categories}">
-      <img src="${item.src}" alt="${item.alt || item.name}" />
-      <h2>${item.name || "Untitled"}</h2>
-      <h3>${artist}</h3>
-      <p>${item.published || ""}</p>
+function inject(artPieces){
+  const container= document.querySelector(".container")
+  container.insertAdjacentHTML("beforeend",
+    `<div class = "card">
+    <h3 class = "artname"> Art Name : ${artPieces.category}</h3>
     </div>`
-  );
+  )
+
 }
+inject(artPieces)
 
-/* -----------------------------
-   Modal (event delegation)
------------------------------ */
-function enableModal() {
-  const modal = document.getElementById("modal");
 
-  document.querySelector(".container").addEventListener("click", (event) => {
-    const card = event.target.closest(".card");
-    if (!card) return;
 
-    modal.querySelector("#modalImg").src =
-      card.querySelector("img").src;
-    modal.querySelector("#modalName").textContent =
-      card.querySelector("h2").textContent;
-    modal.querySelector("#modalArtist").textContent =
-      card.querySelector("h3").textContent;
-    modal.querySelector("#modalYear").textContent =
-      card.querySelector("p").textContent;
 
-    modal.classList.add("show");
-  });
+// function injectGallery(pieces) {
+//   const gallery = document.getElementById("gallery")
+//   if (!gallery) return
 
-  modal.addEventListener("click", (event) => {
-    if (event.target === modal) {
-      modal.classList.remove("show");
-    }
-  });
-}
+//   gallery.innerHTML = "" // clear existing content
 
-/* -----------------------------
-   Filtering
------------------------------ */
-function filterByCategory(category) {
-  const target = category.toLowerCase();
+//   pieces.forEach(piece => {
+//     const card = document.createElement("article")
+//     card.className = "art-card"
 
-  document.querySelectorAll(".card").forEach((card) => {
-    const cats = card.dataset.cat;
-    card.style.display =
-      target === "all" || cats.includes(target) ? "" : "none";
-  });
-}
+//     const artists = Array.isArray(piece.artist)
+//       ? piece.artist.join(", ")
+//       : piece.artist
 
-function setupFilterButtons() {
-  document.querySelectorAll(".filter__buttons").forEach((button) => {
-    button.addEventListener("click", () => {
-      filterByCategory(button.textContent.trim());
-    });
-  });
-}
+//     card.innerHTML = `
+//       <img src="${piece.src}" alt="${piece.title || "artwork"}" loading="lazy" />
+//       <div class="meta">
+//         <p class="category">${piece.category}</p>
+//         <p class="artist">${artists}</p>
+//         <p class="date">${piece.month} ${piece.day}, ${piece.year}</p>
+//       </div>
+//     `
 
-/* -----------------------------
-   Random Art of the Day
------------------------------ */
-function randomArtOfTheDay() {
-  const img = document.getElementById("artofDayImg");
-  if (!img || !artPieces.length) return;
+//     gallery.appendChild(card)
+//   })
+// }
 
-  const item = artPieces[Math.floor(Math.random() * artPieces.length)];
-  img.src = item.src || "";
-  img.alt = item.alt || item.title || "";
-}
+// function inject(item) {
+//   const container = document.querySelector(".container");
+//   if (!container) return;
 
-/* -----------------------------
-   DOM Ready
------------------------------ */
-document.addEventListener("DOMContentLoaded", () => {
-  // Use the defined artPieces array
-  artPieces.forEach(inject);
+//   const categories = Array.isArray(item.category)
+//     ? item.category.map(c => c.toLowerCase()).join(", ")
+//     : String(item.category).toLowerCase();
 
-  // also populate the #gallery if present
-  const galleryEl = document.getElementById("gallery");
-  if (galleryEl) injectGallery(artPieces);
+//   const artist = Array.isArray(item.artist)
+//     ? item.artist.join(", ")
+//     : item.artist;
 
-  enableModal();
-  setupFilterButtons();
-  randomArtOfTheDay();
-  filterByCategory("All");
+//   container.insertAdjacentHTML(
+//     "beforeend",
+//     `<div class="card" data-cat="${categories}">
+//       <img src="${item.src}" alt="${item.alt || item.name}" />
+//       <h2>${item.name || "Untitled"}</h2>
+//       <h3>${artist}</h3>
+//       <p>${item.published || ""}</p>
+//     </div>`
+//   );
+// }
 
-  //upload info
-  const uploadForm = document.getElementById("uploadForm");
-  const uploadName = document.getElementById("uploadName");
-  const uploadArtist = document.getElementById("uploadArtist");
-  const uploadYear = document.getElementById("uploadYear");
+// /* -----------------------------
+//    Modal (event delegation)
+// ----------------------------- */
+// function enableModal() {
+//   const modal = document.getElementById("modal");
 
-  if (uploadForm) {
-    uploadForm.addEventListener("submit", (event) => {
-      event.preventDefault();
+//   document.querySelector(".container").addEventListener("click", (event) => {
+//     const card = event.target.closest(".card");
+//     if (!card) return;
 
-      const fileInput = uploadForm.querySelector('input[type="file"]');
-      const file = fileInput ? fileInput.files[0] : null;
-      if (!file) return alert("Please select an image");
+//     modal.querySelector("#modalImg").src =
+//       card.querySelector("img").src;
+//     modal.querySelector("#modalName").textContent =
+//       card.querySelector("h2").textContent;
+//     modal.querySelector("#modalArtist").textContent =
+//       card.querySelector("h3").textContent;
+//     modal.querySelector("#modalYear").textContent =
+//       card.querySelector("p").textContent;
 
-      const newArt = {
-        name: (uploadName && uploadName.value) || "Untitled",
-        artist: (uploadArtist && uploadArtist.value) || "Unknown",
-        published: (uploadYear && uploadYear.value) || "",
-        src: URL.createObjectURL(file),
-        alt: (uploadName && uploadName.value) || "",
-        category: ["user upload"],
-      };
+//     modal.classList.add("show");
+//   });
 
-      artPieces.push(newArt);
-      inject(newArt);
-      uploadForm.reset();
-    });
-  }
+//   modal.addEventListener("click", (event) => {
+//     if (event.target === modal) {
+//       modal.classList.remove("show");
+//     }
+//   });
+// }
 
-  //theme toggle 
-  const toggleButton = document.getElementById("theme-toggle");
-  const body = document.body;
+// /* -----------------------------
+//    Filtering
+// ----------------------------- */
+// function filterByCategory(category) {
+//   const target = category.toLowerCase();
 
-  body.classList.add("warm");
+//   document.querySelectorAll(".card").forEach((card) => {
+//     const cats = card.dataset.cat;
+//     card.style.display =
+//       target === "all" || cats.includes(target) ? "" : "none";
+//   });
+// }
 
-  if (toggleButton) {
-    toggleButton.addEventListener("click", () => {
-      if (body.classList.contains("warm")) {
-        body.classList.replace("warm", "cool"); // switch to dark
-      } else {
-        body.classList.replace("cool", "warm"); // switch to light
-      }
-    });
-  }
-});
+// function setupFilterButtons() {
+//   document.querySelectorAll(".filter__buttons").forEach((button) => {
+//     button.addEventListener("click", () => {
+//       filterByCategory(button.textContent.trim());
+//     });
+//   });
+// }
+
+// /* -----------------------------
+//    Random Art of the Day
+// ----------------------------- */
+// function randomArtOfTheDay() {
+//   const img = document.getElementById("artofDayImg");
+//   if (!img || !artPieces.length) return;
+
+//   const item = artPieces[Math.floor(Math.random() * artPieces.length)];
+//   img.src = item.src || "";
+//   img.alt = item.alt || item.title || "";
+// }
+
+// /* -----------------------------
+//    DOM Ready
+// ----------------------------- */
+// document.addEventListener("DOMContentLoaded", () => {
+//   // Use the defined artPieces array
+//   artPieces.forEach(inject);
+
+//   // also populate the #gallery if present
+//   const galleryEl = document.getElementById("gallery");
+//   if (galleryEl) injectGallery(artPieces);
+
+//   enableModal();
+//   setupFilterButtons();
+//   randomArtOfTheDay();
+//   filterByCategory("All");
+
+//   //upload info
+//   const uploadForm = document.getElementById("uploadForm");
+//   const uploadName = document.getElementById("uploadName");
+//   const uploadArtist = document.getElementById("uploadArtist");
+//   const uploadYear = document.getElementById("uploadYear");
+
+//   if (uploadForm) {
+//     uploadForm.addEventListener("submit", (event) => {
+//       event.preventDefault();
+
+//       const fileInput = uploadForm.querySelector('input[type="file"]');
+//       const file = fileInput ? fileInput.files[0] : null;
+//       if (!file) return alert("Please select an image");
+
+//       const newArt = {
+//         name: (uploadName && uploadName.value) || "Untitled",
+//         artist: (uploadArtist && uploadArtist.value) || "Unknown",
+//         published: (uploadYear && uploadYear.value) || "",
+//         src: URL.createObjectURL(file),
+//         alt: (uploadName && uploadName.value) || "",
+//         category: ["user upload"],
+//       };
+
+//       artPieces.push(newArt);
+//       inject(newArt);
+//       uploadForm.reset();
+//     });
+//   }
+
+//   //theme toggle 
+//   const toggleButton = document.getElementById("theme-toggle");
+//   const body = document.body;
+
+//   body.classList.add("warm");
+
+//   if (toggleButton) {
+//     toggleButton.addEventListener("click", () => {
+//       if (body.classList.contains("warm")) {
+//         body.classList.replace("warm", "cool"); // switch to dark
+//       } else {
+//         body.classList.replace("cool", "warm"); // switch to light
+//       }
+//     });
+//   }
+// });
