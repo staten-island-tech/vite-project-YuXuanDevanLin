@@ -7,7 +7,7 @@ const artPieces = [
     artist: "rzskylark",
     month: "October",
     day: 21,
-    src: "",
+    src: "digartgal/images/October_21st_2024.jpg",
     alt: "Artwork by rzskylark from Collab 1, October 21, 2024"
   },
   { title: "",
