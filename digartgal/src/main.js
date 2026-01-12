@@ -1,7 +1,7 @@
 import './style.css'
 
 const artPieces = [
-  { title: "",
+  { title: "Artwork by rzskylark, October 21, 2024",
     category: "Collab 1", 
     year: 2024,
     artist: "rzskylark",
@@ -103,18 +103,7 @@ const artPieces = [
   { title: "",
     category: "Collab 3 (name tbd)", 
     year: 2025,
-    artist: [ 
-      "multiple artists", 
-      "rayerm12", 
-      "unknown artist", 
-      "_.gaiahad", 
-      "alaudase", 
-      "khanashii_",
-      "mjyukwie",
-      "exgoeast",
-      "kiyoshot",
-      "mochi.wert"
-    ],
+    artist: "multiple artists", 
     month: "January",
     day: 23,
     src: "",
